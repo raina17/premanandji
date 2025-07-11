@@ -170,7 +170,7 @@ h1, h2 {
 
 /* ================== PARALLAX SECTION STYLES ======================== */
 .parallax-section {
-  background-image: url('C:\\Users\\raina\\OneDrive\\Desktop\\premanandji\\leela.png');
+  background-image: url('leela.png');
   min-height: 600px; 
   background-attachment: fixed;
   background-position: center;
