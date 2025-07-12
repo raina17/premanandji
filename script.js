@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const images = [
             'leela.png',
             'maharaj_ji_2.png',
-            'maharaj_ji_1.png'
+            'maharaj_ji_1.png',
+            'maharaj_ji_3.png'
         ];
 
         let currentImageIndex = 0;
