@@ -23,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // IMPORTANT: REPLACE these with your actual image paths
         const images = [
             'leela.png',
-            '{8FB982B3-288E-44D7-B225-B62217F70C9E}.jpg'
+            'maharaj_ji_2.png',
+            'maharaj_ji_1.png'
         ];
 
         let currentImageIndex = 0;
