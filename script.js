@@ -1,74 +1,142 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
 
-    // ======================== Navigation Bar Scroll Effect ========================
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-
-    // ======================== Hero Section Image Fader ========================
-    const heroImagesContainer = document.getElementById('hero-images');
-    // IMPORTANT: Add the paths to your high-resolution images here
-    const images = [
-        'path/to/your/image1.jpg',
-        'path/to/your/image2.jpg',
-        'path/to/your/image3.jpg'
-    ];
-    let currentImageIndex = 0;
-
-    if (images.length > 0) {
-        // Create image elements and add them to the container
-        images.forEach((src, index) => {
-            const img = document.createElement('img');
-            img.src = src;
-            img.style.opacity = index === 0 ? '1' : '0'; // Show first image
-            heroImagesContainer.appendChild(img);
+    // --- Navigation Bar Scroll Effect ---
+    const header = document.querySelector('.main-header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
-
-        const imageElements = heroImagesContainer.getElementsByTagName('img');
-        
-        setInterval(() => {
-            imageElements[currentImageIndex].style.opacity = '0';
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            imageElements[currentImageIndex].style.opacity = '1';
-        }, 5000); // Change image every 5 seconds
     }
 
 
-    // ======================== Timeline Interactivity ========================
-    const milestones = document.querySelectorAll('.milestone');
-    const infoBox = document.getElementById('milestone-info-box');
+    // --- 1. DARSHAN (Image Slideshow Logic) ---
+    const slideshowContainer = document.querySelector('.slideshow-container');
+    if (slideshowContainer) {
+        const nextArrow = document.querySelector('.next-arrow');
+        const prevArrow = document.querySelector('.prev-arrow');
+        const dotsContainer = document.querySelector('.slide-dots');
 
-    milestones.forEach(milestone => {
-        milestone.addEventListener('click', () => {
-            // Get the information from the 'data-info' attribute
-            const infoText = milestone.getAttribute('data-info');
-            infoBox.textContent = infoText;
+        // IMPORTANT: REPLACE these with your actual image paths
+        const images = [
+            'leela.png',
+            '{8FB982B3-288E-44D7-B225-B62217F70C9E}.jpg'
+        ];
+
+        let currentImageIndex = 0;
+
+        images.forEach((src, index) => {
+            const img = document.createElement('img');
+            img.src = src;
+            if (index === 0) img.classList.add('active');
+            slideshowContainer.appendChild(img);
+
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if (index === 0) dot.classList.add('active');
+            dot.dataset.index = index;
+            dotsContainer.appendChild(dot);
         });
-    });
 
+        const imageElements = document.querySelectorAll('.slideshow-container img');
+        const dotElements = document.querySelectorAll('.dot');
 
-    // ======================== NEW: Scroll Animation For Section Headings ========================
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            // If the element is visible in the viewport
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+        function showImage(index) {
+            imageElements.forEach(img => img.classList.remove('active'));
+            dotElements.forEach(dot => dot.classList.remove('active'));
+            imageElements[index].classList.add('active');
+            dotElements[index].classList.add('active');
+            currentImageIndex = index;
+        }
+
+        nextArrow.addEventListener('click', () => {
+            let nextIndex = currentImageIndex + 1;
+            if (nextIndex >= images.length) nextIndex = 0;
+            showImage(nextIndex);
+        });
+
+        prevArrow.addEventListener('click', () => {
+            let prevIndex = currentImageIndex - 1;
+            if (prevIndex < 0) prevIndex = images.length - 1;
+            showImage(prevIndex);
+        });
+
+        dotsContainer.addEventListener('click', (e) => {
+            if (e.target.classList.contains('dot')) {
+                const index = parseInt(e.target.dataset.index, 10);
+                showImage(index);
             }
         });
-    }, {
-        threshold: 0.1 // Trigger when 10% of the element is visible
-    });
+        
+        setInterval(() => { nextArrow.click(); }, 7000);
+    }
 
-    // Find all the H2 headings in content sections and tell the observer to watch them
-    const sectionHeadings = document.querySelectorAll('.content-section h2');
-    sectionHeadings.forEach(heading => {
-        observer.observe(heading);
-    });
 
+    // --- 2. LEELA PATH (Scroll Animation Logic) ---
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    if (timelineItems.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        timelineItems.forEach(item => observer.observe(item));
+    }
+
+
+    // --- 2. LEELA PATH (Floating Particles Animation - UPDATED) ---
+    const particleContainer = document.querySelector('.particles-background');
+    if (particleContainer) {
+        const particlesToCreate = 50;
+        for (let i = 0; i < particlesToCreate; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // NEW: Randomly assign up or down flow
+            if (Math.random() > 0.5) {
+                particle.classList.add('float-up');
+            } else {
+                particle.classList.add('float-down');
+            }
+            
+            const size = Math.random() * 15 + 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}%`;
+            
+            const duration = Math.random() * 12 + 8;
+            particle.style.animationDuration = `${duration}s`;
+
+            const delay = Math.random() * 10;
+            particle.style.animationDelay = `${delay}s`;
+            
+            particle.style.opacity = Math.random();
+            particleContainer.appendChild(particle);
+        }
+    }
+
+
+    // --- 3 & 4. AMRIT VANI (Video Filter Logic) ---
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const videoCards = document.querySelectorAll('.video-card');
+    if (filterButtons.length > 0) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.dataset.filter;
+
+                videoCards.forEach(card => {
+                    card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'block' : 'none';
+                });
+            });
+        });
+    }
 });
-

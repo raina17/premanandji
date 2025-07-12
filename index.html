@@ -3,106 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premanandji Maharaj - Anubhuti</title>
-    
-    <link rel="stylesheet" href="style.css">
+    <title>Anubhuti - A Tribute to Premanandji Maharaj</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav id="navbar">
-        <div class="nav-links">
+    <header class="main-header">
+        <nav class="main-nav">
             <a href="#darshan">Darshan</a>
             <a href="#leela-path">Leela Path</a>
             <a href="#amrit-vani">Amrit Vani</a>
-            <a href="#divya-sangam">Divya Sangam</a>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <section id="darshan" class="hero">
-        <video autoplay muted loop id="hero-video">
-            <source src="intro.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <div id="hero-images">
-             </div>
-        <div class="hero-content">
-            <h1 class="hero-quote">"True love seeks nothing in return."</h1>
-            <a href="#leela-path" class="cta-button">Begin the Journey</a>
-        </div>
-    </section>
-
-    <section id="leela-path" class="content-section parallax-section">
-    <div class="hero-content"   >
-        <h2 class="hero-quote">Leela Path - The Journey of a Saint</h2>
-        <div class="timeline-container">
-            <div class="timeline">
-                <div class="milestone" data-info="Birth and Early Life: Premanandji Maharaj was born into a pious and devout Brahmin family in Akhri village, Kanpur, Uttar Pradesh. His birth name was Anirudh Kumar Pandey. From a very young age, he displayed a profound inclination towards spirituality, reading sacred texts like the Bhagavad Gita and showing little interest in worldly affairs">
-                    <div class="milestone-dot"></div>
-                    <div class="milestone-year">1972</div>
-                </div>
-                <div class="milestone" data-info="The Great Renunciation (Age 13): This is one of the most pivotal moments in his life. At the tender age of 13, driven by an intense desire for God-realization, he left his home and family. He embarked on a solitary journey, beginning a life of extreme austerity and spiritual practice (sadhana).">
-                    <div class="milestone-dot"></div>
-                    <div class="milestone-year">1985</div>
-                </div>
-                <div class="milestone" data-info="Period of Intense Austerity: After leaving home, he spent many years as a wandering ascetic (sannyasi). He is known to have spent significant time on the banks of the river Ganga, often subsisting on whatever was offered and spending his days and nights in deep meditation and contemplation, enduring extreme weather and physical hardships.">
-                    <div class="milestone-dot"></div>
-                    <div class="milestone-year">Post-1985</div>
-                </div>
-                <div class="milestone" data-info="His spiritual quest eventually led him to the holy land of Vrindavan, the place eternally associated with the divine sports of Radha and Krishna. Finding an unparalleled spiritual resonance in the atmosphere of Vrindavan, he decided to make it the permanent center for his devotional practices.">
-                    <div class="milestone-dot"></div>
-                    <div class="milestone-year">Arrival in Vrindavan</div>
-                </div>
-                <div class="milestone" data-info="In Vrindavan, he met his spiritual master, Shri Hit Gaurangi Sharan Ji Maharaj. He received initiation (diksha) from him into the prestigious Radhavallabh Sampradaya, a Vaishnava tradition that exclusively worships Shri Radha as the supreme deity. From this point on, he became known as Premanand Govind Sharan. This was the most crucial milestone in formalizing his spiritual path.">
-                    <div class="milestone-dot"></div>
-                    <div class="milestone-year">Initiation into the Radhavallabh Sampradaya</div>
-                </div>
-                <div class="milestone" data-info="While he had been conducting satsangs (spiritual discourses) for many years at his ashram, Shri Hit Radha Keli Kunj, this period marked his rise to global prominence. His satsangs, recorded and shared on platforms like YouTube, began to touch the lives of millions around the world. His simple, direct, and deeply devotional answers to life's most complex problems resonated widely, making him one of the most beloved spiritual guides in the digital age">
-                    <div class="milestone-dot"></div>
-                    <div class="milestone-year"> Late 2010s - Early 2020s</div>
-                </div>
-                <div class="milestone" data-info="Spiritual Authority: He is firmly established as one of the most prominent and revered saints of the Radhavallabhi Sampradaya and a leading spiritual authority in Vrindavan. Global Digital Guru: His influence has never been greater, largely due to his massive presence on social media. His practical, love-based teachings reach millions of people daily across the globe, offering guidance and solace. Destination for Seekers: The ashram continues to be a major spiritual hub, attracting a constant flow of devotees from all walks of life, including high-profile personalities, who come to seek his guidance and blessings.">
-                    <div class="milestone-dot"></div>
-                    <div class="milestone-year"> Current Role and Influence</div>
+    <main>
+        <section id="darshan">
+            <div class="slideshow-container">
+                <div class="slide-text">
+                    <h1>"प्रेम ही परमात्मा है"</h1>
+                    <p>Darshan of Shri Hit Premanand Govind Sharan Ji Maharaj</p>
                 </div>
             </div>
-        </div>
-            <div id="milestone-info-box">Click on a milestone to see details.</div>
-        </div>
-    </section>
+            <button class="slide-arrow prev-arrow">&#10094;</button>
+            <button class="slide-arrow next-arrow">&#10095;</button>
+            <div class="slide-dots"></div>
+        </section>
 
-    <section id="amrit-vani" class="content-section">
-        <h2 class="hero-quote">Amrit Vani - The Stream of Wisdom</h2>
-        <div class="video-gallery">
-            <a href="YOUTUBE_LINK_HERE" target="_blank" class="video-card">
-                <img src="path/to/your/thumbnail1.jpg" alt="Video Thumbnail">
-                <div class="video-title">The True Meaning of Devotion</div>
-            </a>
-            <a href="YOUTUBE_LINK_HERE" target="_blank" class="video-card">
-                <img src="path/to/your/thumbnail2.jpg" alt="Video Thumbnail">
-                <div class="video-title">How to Overcome Anger</div>
-            </a>
+        <section id="leela-path">
+            <div class="particles-background"></div>
+            <div class="container">
+                <h2>Leela Path - The Journey of a Saint</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>1972 - Birth and Early Life</h3>
+                            <p>Premanandji Maharaj was born as Anirudh Kumar Pandey into a devout Brahmin family in Akhri village, Kanpur, Uttar Pradesh. From a very young age, he showed a profound inclination towards spirituality and little interest in worldly affairs.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>1985 - The Great Renunciation</h3>
+                            <p>This is one of the most pivotal moments in his life. At the tender age of 13, driven by an intense desire for God-realization, he left his home and family. He embarked on a solitary journey, beginning a life of extreme austerity and spiritual practice (sadhana).</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Post-1985: Period of Intense Austerity</h3>
+                            <p>After leaving home, he spent many years as a wandering ascetic (sannyasi). He is known to have spent significant time on the banks of the river Ganga, subsisting on whatever was offered and spending his time in deep meditation and contemplation, enduring extreme hardships.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Arrival in Vrindavan & Initiation</h3>
+                            <p>His spiritual quest eventually led him to the holy land of Vrindavan. There, he met his spiritual master, Shri Hit Gaurangi Sharan Ji Maharaj, and received initiation (diksha) into the prestigious Radhavallabh Sampradaya. This was the most crucial milestone in formalizing his spiritual path.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <h3>Late 2010s - Early 2020s: Digital Age Guru</h3>
+                            <p>While he had been conducting spiritual discourses (satsangs) for many years at his ashram, Shri Hit Radha Keli Kunj, this period marked his rise to global prominence. His satsangs, shared on platforms like YouTube, began to touch the lives of millions around the world, making him one of the most beloved spiritual guides in the digital era.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-    </section>
-
-    <section id="divya-sangam" class="content-section alternate-bg">
-        <h2 class="hero-quote">Divya Sangam - In Divine Company</h2>
-        <div class="video-gallery">
-             <a href="YOUTUBE_LINK_HERE" target="_blank" class="video-card">
-                <img src="path/to/your/thumbnail3.jpg" alt="Video Thumbnail">
-                <div class="video-title">Interview with [News Channel]</div>
-            </a>
+        </section>
+        
+        <section id="amrit-vani">
+            <div class="container">
+                <h2>Amrit Vani - Nectar of Teachings</h2>
+                
+                <div class="video-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="official">Official Channel</button>
+                    <button class="filter-btn" data-filter="media">In Media</button>
+                </div>
+                
+                <div class="video-grid">
+                    <div class="video-card" data-category="official">
+                        <div class="video-embed">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/C8jQbZgfFo8?si=tsC_yH_zaDmpG0X4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Ekaantik Vartalaap</h3>
+                            <p>Date: July 11, 2025</p>
+                        </div>
+                    </div>
+                    <div class="video-card" data-category="official">
+                        <div class="video-embed">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/rQDdRFNISrY?si=NsqK1zj12XAz8Y6R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Ekaantik Vartalaap</h3>
+                            <p>Date: July 10, 2025</p>
+                        </div>
+                    </div>
+                    <div class="video-card" data-category="official">
+                         <div class="video-embed">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/pEnrm2fQCXs?si=qvh1iDUCJaEvDZ5Z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Ekaantik Vartalaap</h3>
+                            <p>Date: July 09, 2025</p>
+                        </div>
+                    </div>
+                    <div class="video-card" data-category="media">
+                         <div class="video-embed">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/fOFUVKnjWgI?si=K6xHUtX_XpiFU8cG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>How to Control Overthinking</h3>
+                            <p>Date: June 12, 2025</p>
+                        </div>
+                    </div>
+                    <div class="video-card" data-category="media">
+                         <div class="video-embed">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/JISqoVBJFcs?si=MH8TlGyDVPLVXP41" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="video-info">
+                            <h3>Power of Silence</h3>
+                            <p>Date: June 25, 2025</p>
+                        </div>
+                    </div>
+                    </div>
             </div>
-    </section>
+        </section>
+    </main>
 
-    <footer>
-        <p>© 2025 premanandji.in | A Humble Seva</p>
-        <p>Contact Shri Hit Radha Keli Kunj Ashram for official information.</p>
+    <footer class="main-footer">
+        <p>© 2025 Anubhuti | A Humble Seva for Shri Premanandji Maharaj</p>
     </footer>
 
     <script src="script.js"></script>
+
 </body>
 </html>
