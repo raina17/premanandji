@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const prevArrow = document.querySelector('.prev-arrow');
         const dotsContainer = document.querySelector('.slide-dots');
 
-        // IMPORTANT: REPLACE these with your actual image paths
         const images = [
             'leela.png',
             'maharaj_ji_2.png',
@@ -100,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const particle = document.createElement('div');
             particle.classList.add('particle');
             
-            // NEW: Randomly assign up or down flow
             if (Math.random() > 0.5) {
                 particle.classList.add('float-up');
             } else {
@@ -141,4 +139,33 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    const medContainer = document.querySelector('.meditation-container');
+    const medText = document.querySelector('.meditation-text');
+    
+    if (medContainer && medText) {
+        const breathTime = 4000;
+        const holdTime = 7000;
+        const exhaleTime = 4000; 
+
+        function breathAnimation() {
+            medText.innerText = 'Inhale';
+            medContainer.classList.add('grow');
+            medContainer.classList.remove('shrink');
+
+            setTimeout(() => {
+                medText.innerText = 'Hold';
+
+                setTimeout(() => {
+                    medText.innerText = 'Exhale';
+                    medContainer.classList.add('shrink');
+                    medContainer.classList.remove('grow');
+                }, holdTime);
+            }, breathTime);
+        }
+
+        breathAnimation();
+        setInterval(breathAnimation, breathTime + holdTime + exhaleTime);
+    }
+
 });
