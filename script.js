@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         images.forEach((src, index) => {
             const img = document.createElement('img');
             img.src = src;
+            img.alt = `Darshan of Shri Premanandji Maharaj - Image ${index + 1}`;
             if (index === 0) img.classList.add('active');
             slideshowContainer.appendChild(img);
 
