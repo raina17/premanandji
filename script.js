@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        setInterval(() => { nextArrow.click(); }, 7000);
+        setInterval(() => { nextArrow.click(); }, 2000);
     }
 
 
